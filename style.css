@@ -1,11 +1,13 @@
 :root {
   --bg: rgb(247, 246, 246);
   --text: #111;
-  --gray: #555;
-  --border: #e5e5e5;
+  --gray: #9e9e9e;
+  --border: #d0d0d0;
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   --radius: 12px;
   --max-width: 1100px;
+  --primary-blue: #2d3561;
+  --accent-blue: #64b5f6;
 }
 
 * {
@@ -13,11 +15,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Particle background */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 body {
   font-family: system-ui, sans-serif;
-  background: var(--bg);
+  background: #ffffff;
   color: var(--text);
   line-height: 1.6;
+  position: relative;
 }
 a {
   color: inherit;
@@ -28,6 +41,7 @@ section {
   width: 100%;
   padding: 80px 20px;
   border-bottom: 1px solid var(--border);
+  background: #ffffff;
 }
 
 .container {
@@ -54,15 +68,18 @@ p {
 .btn {
   display: inline-block;
   padding: 12px 22px;
-  border: 1px solid var(--border);
+  border: 2px solid var(--primary-blue);
   border-radius: var(--radius);
-  transition: 0.2s;
+  transition: 0.3s;
   background: white;
+  color: var(--primary-blue);
+  font-weight: 500;
 }
 .btn:hover {
-  background: #f7f7f7;
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
+  background: var(--primary-blue);
+  color: white;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 
 /* Hero */
@@ -154,12 +171,13 @@ textarea {
 /* Navigation */
 .site-nav {
   width: 100%;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
   position: fixed;
   top: 0;
   left: 0;
-  background: #fff;
+  background: var(--primary-blue);
   z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 .nav-inner {
   display: flex;
@@ -171,8 +189,19 @@ textarea {
   display: flex;
   gap: 25px;
 }
+.nav-links a {
+  color: #ffffff;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  color: var(--accent-blue);
+  border-bottom: 2px solid var(--accent-blue);
+}
 .brand {
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--accent-blue);
+  font-size: 1.1rem;
 }
 
 /* Utilities */
@@ -252,7 +281,13 @@ textarea {
 .site-footer {
   padding: 20px 20px;
   text-align: center;
-  background: var(--bg);
+  background: var(--primary-blue);
+  color: #ffffff;
+  border-top: none;
+}
+
+.site-footer p {
+  color: #ffffff;
 }
 
 /* Animated text styles */
