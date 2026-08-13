@@ -81,12 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Animated Text
   const animatedText = document.querySelector(".animated-text");
-  const phrases = [ "Student","MERN Stack Developer","Software Developer"];
+  const phrases = [ "FullStack Developer", "React Developer", "Node.js Developer"];
   let index = 0;
 
   function updateText() {
     animatedText.textContent = phrases[index];
-    index = (index + 2) % phrases.length;
+    index = (index + 1) % phrases.length;
   }
 
   setInterval(updateText, 3000);
